@@ -6,6 +6,7 @@ from datetime import datetime
 from router.router import user
 
 
+
 app= FastAPI()
 
 # Post Model

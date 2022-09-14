@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 from config.db import conn
-from model.constructors import constructors, circuits, drivers, pit_stoprs,races
+from model.constructors import constructors, circuits, drivers, pit_stoprs,races,results
 from schema.constructors_schema import Busqueda1
 from cryptography.fernet import Fernet
 
@@ -30,7 +30,11 @@ def getpit_stoprs():
 def getpit_stoprs():
     return conn.execute(races.select()).fetchall()   
 
+@user.get("/results")
+def getpit_stoprs():
+    return conn.execute(results.select()).fetchall()   
+
 #@user.post("/busqueda")
-#def busqueda1(user: Busqueda1):
+# def busqueda1(user: Busqueda1):
 #    resultado = conn.execute()
 #    return "Hello "
