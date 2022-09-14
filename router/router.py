@@ -30,7 +30,7 @@ def getpit_stoprs():
 def getpit_stoprs():
     return conn.execute(races.select()).fetchall()   
 
-@user.post("/busqueda")
-def busqueda1(user: Busqueda1):
-    resultado = conn.execute()
-    return "Hello "
+#@user.post("/busqueda")
+#def busqueda1(user: Busqueda1):
+#    resultado = conn.execute()
+#    return "Hello "
