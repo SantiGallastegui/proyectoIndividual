@@ -3,6 +3,7 @@ from unicodedata import decimal
 from sqlalchemy import Table, Column
 from sqlalchemy.sql.sqltypes import Integer, String, DECIMAL
 from config.db import engine, meta_data
+from pydantic import BaseModel
 
 constructors = Table("constructors",meta_data,
             Column("constructorId",Integer,primary_key=True),
@@ -10,6 +11,14 @@ constructors = Table("constructors",meta_data,
             Column("name", String(255), nullable=False),
             Column("nationality",String(255), nullable=False),
             Column("url", String(255), nullable=False))
+
+class constructor(BaseModel):
+    constructorId: int
+    constructorRef: str
+    name: str
+    nationality :str
+    url: str
+    
 
 circuits = Table("circuits",meta_data,
             Column("circuitId",Integer,primary_key=True),
